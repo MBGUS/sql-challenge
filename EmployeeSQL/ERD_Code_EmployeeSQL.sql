@@ -52,7 +52,7 @@ CREATE TABLE [salaries] (
 )
 
 CREATE TABLE [titles] (
-    [title_id] INTEGER  NOT NULL ,
+    [title_id] VARCHAR  NOT NULL ,
     [title] VARCHAR  NOT NULL ,
     CONSTRAINT [PK_titles] PRIMARY KEY CLUSTERED (
         [title_id] ASC
