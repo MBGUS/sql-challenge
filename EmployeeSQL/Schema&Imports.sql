@@ -58,8 +58,7 @@ CREATE TABLE dept_manager (
 );
 
 CREATE TABLE titles (
-	title_id INT,
+	title_id VARCHAR(50),
 	title VARCHAR(50),
-	PRIMARY KEY (emp_no, title),
-	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
+	PRIMARY KEY (title)
 );
