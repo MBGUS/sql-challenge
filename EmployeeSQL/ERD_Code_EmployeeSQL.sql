@@ -32,10 +32,11 @@ CREATE TABLE [dept_manager] (
 
 CREATE TABLE [employees] (
     [emp_no] INTEGER  NOT NULL ,
+    [emp_title] VARCHAR  NOT NULL ,
     [birth_date] DATE  NOT NULL ,
     [first_name] VARCHAR  NOT NULL ,
     [last_name] VARCHAR  NOT NULL ,
-    [gender] VARCHAR  NOT NULL ,
+    [sex] VARCHAR  NOT NULL ,
     [hire_date] DATE  NOT NULL ,
     CONSTRAINT [PK_employees] PRIMARY KEY CLUSTERED (
         [emp_no] ASC
@@ -51,10 +52,10 @@ CREATE TABLE [salaries] (
 )
 
 CREATE TABLE [titles] (
-    [emp_no] INTEGER  NOT NULL ,
+    [title_id] INTEGER  NOT NULL ,
     [title] VARCHAR  NOT NULL ,
     CONSTRAINT [PK_titles] PRIMARY KEY CLUSTERED (
-        [emp_no] ASC,[title] ASC
+        [title_id] ASC
     )
 )
 
@@ -82,10 +83,5 @@ ALTER TABLE [employees] WITH CHECK ADD CONSTRAINT [FK_employees_emp_no] FOREIGN 
 REFERENCES [salaries] ([emp_no])
 
 ALTER TABLE [employees] CHECK CONSTRAINT [FK_employees_emp_no]
-
-ALTER TABLE [titles] WITH CHECK ADD CONSTRAINT [FK_titles_emp_no] FOREIGN KEY([emp_no])
-REFERENCES [employees] ([emp_no])
-
-ALTER TABLE [titles] CHECK CONSTRAINT [FK_titles_emp_no]
 
 COMMIT TRANSACTION QUICKDBD
