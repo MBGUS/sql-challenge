@@ -17,8 +17,6 @@ CREATE TABLE [departments] (
 CREATE TABLE [dept_emp] (
     [emp_no] INTEGER  NOT NULL ,
     [dept_no] VARCHAR  NOT NULL ,
-    [from_date] DATE  NOT NULL ,
-    [to_date] DATE  NOT NULL ,
     CONSTRAINT [PK_dept_emp] PRIMARY KEY CLUSTERED (
         [emp_no] ASC,[dept_no] ASC
     )
@@ -27,8 +25,6 @@ CREATE TABLE [dept_emp] (
 CREATE TABLE [dept_manager] (
     [dept_no] VARCHAR  NOT NULL ,
     [emp_no] INTEGER  NOT NULL ,
-    [from_date] DATE  NOT NULL ,
-    [to_date] DATE  NOT NULL ,
     CONSTRAINT [PK_dept_manager] PRIMARY KEY CLUSTERED (
         [dept_no] ASC,[emp_no] ASC
     )
@@ -49,8 +45,6 @@ CREATE TABLE [employees] (
 CREATE TABLE [salaries] (
     [emp_no] INTEGER  NOT NULL ,
     [salary] INTEGER  NOT NULL ,
-    [from_date] DATE  NOT NULL ,
-    [to_date] DATE  NOT NULL ,
     CONSTRAINT [PK_salaries] PRIMARY KEY CLUSTERED (
         [emp_no] ASC
     )
@@ -59,8 +53,6 @@ CREATE TABLE [salaries] (
 CREATE TABLE [titles] (
     [emp_no] INTEGER  NOT NULL ,
     [title] VARCHAR  NOT NULL ,
-    [from_date] DATE  NOT NULL ,
-    [to_date] DATE  NOT NULL ,
     CONSTRAINT [PK_titles] PRIMARY KEY CLUSTERED (
         [emp_no] ASC,[title] ASC
     )
