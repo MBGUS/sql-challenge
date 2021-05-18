@@ -1,4 +1,4 @@
-# _SQL Homework - Employee Database: A Mystery in Two Parts
+#_ SQL Homework - Employee Database: A Mystery in Two Parts
 
 
 ## Background
