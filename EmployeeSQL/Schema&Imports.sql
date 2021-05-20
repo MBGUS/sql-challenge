@@ -30,6 +30,12 @@ CREATE TABLE departments (
 	dept_name VARCHAR(50)
 );
 
+CREATE TABLE titles (
+	title_id VARCHAR(50),
+	title VARCHAR(50),
+	PRIMARY KEY (title_id)
+);
+
 CREATE TABLE employees (
 	emp_no INT PRIMARY KEY,
 	emp_title VARCHAR(50),
@@ -38,7 +44,8 @@ CREATE TABLE employees (
 	last_name VARCHAR(50),
 	sex VARCHAR(50),
 	hire_date DATE,
-	FOREIGN KEY (emp_no) REFERENCES salaries(emp_no)
+	FOREIGN KEY (emp_no) REFERENCES salaries(emp_no),
+	FOREIGN KEY (emp_title) REFERENCES titles(title_id)
 );
 
 CREATE TABLE dept_emp (
@@ -55,10 +62,4 @@ CREATE TABLE dept_manager (
 	PRIMARY KEY (dept_no, emp_no),
 	FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
 	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
-);
-
-CREATE TABLE titles (
-	title_id VARCHAR(50),
-	title VARCHAR(50),
-	PRIMARY KEY (title)
 );
