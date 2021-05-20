@@ -14,6 +14,8 @@ INNER JOIN salaries ON employees.emp_no = salaries.emp_no;
 SELECT last_name, first_name, hire_date
 FROM employees
 WHERE hire_date >= '1986-01-01' and hire_date <= '1986-12-31';
+-- Valid Code - Option 2: WHERE hire_date BETWEEN ‘1986-01-01’ AND ‘1986-12-31’
+-- More information: https://www.w3schools.com/sql/sql_between.asp
 
 -- 3.List the manager of each department with the following information: 
 -- department number, department name, the manager's employee number, last name, first name.
