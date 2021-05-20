@@ -39,7 +39,7 @@ CREATE TABLE [employees] (
     [sex] VARCHAR  NOT NULL ,
     [hire_date] DATE  NOT NULL ,
     CONSTRAINT [PK_employees] PRIMARY KEY CLUSTERED (
-        [emp_no] ASC
+        [emp_no] ASC,[emp_title] ASC
     )
 )
 
@@ -52,7 +52,7 @@ CREATE TABLE [salaries] (
 )
 
 CREATE TABLE [titles] (
-    [title_id] VARCHAR  NOT NULL ,
+    [title_id] INTEGER  NOT NULL ,
     [title] VARCHAR  NOT NULL ,
     CONSTRAINT [PK_titles] PRIMARY KEY CLUSTERED (
         [title_id] ASC
@@ -83,5 +83,10 @@ ALTER TABLE [employees] WITH CHECK ADD CONSTRAINT [FK_employees_emp_no] FOREIGN 
 REFERENCES [salaries] ([emp_no])
 
 ALTER TABLE [employees] CHECK CONSTRAINT [FK_employees_emp_no]
+
+ALTER TABLE [employees] WITH CHECK ADD CONSTRAINT [FK_employees_emp_title] FOREIGN KEY([emp_title])
+REFERENCES [titles] ([title_id])
+
+ALTER TABLE [employees] CHECK CONSTRAINT [FK_employees_emp_title]
 
 COMMIT TRANSACTION QUICKDBD
