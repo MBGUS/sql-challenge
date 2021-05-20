@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # Ignore Information
-/EmployeePandas/sql_key.py
+/EmployeePandas/config.py
