@@ -1,2 +1,2 @@
 # SQL Key
-sql_key = "Sherlock_25"
+sql_key = "XXX"
